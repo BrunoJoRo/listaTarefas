@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Link para o arquivo CSS principal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Ícones do Font Awesome -->
+</head>
+<body>
+    <h1 class="titulo">Minha Lista de Tarefas</h1>
+    
+    <!-- Formulário atualizado com todos os novos campos -->
+    <form id="formTarefa"> <!-- Adicionado ID para facilitar a seleção no JS -->
+        <!-- Campo Título (já existente) -->
+        <div class="campo-container">
+            <label for="titulo">Título*</label> <!-- Label para acessibilidade -->
+            <input id="titulo" class="campo-tarefa" type="text" placeholder="Digite o título da tarefa" required> 
+            <!-- Adicionado required pois título é obrigatório -->
+        </div>
+        
+        <!-- Novo campo: Descrição -->
+        <div class="campo-container">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" class="campo-descricao" placeholder="Detalhe sua tarefa (opcional)"></textarea>
+            <!-- Textarea é melhor para textos longos -->
+        </div>
+        
+        <!-- Novo campo: Status (select) -->
+        <div class="campo-container">
+            <label for="status">Status*</label>
+            <select id="status" class="campo-status" required> <!-- Select para opções pré-definidas -->
+                <option value="">Selecione um status...</option>
+                <option value="Pendente">Pendente</option>
+                <option value="Em andamento">Em andamento</option>
+                <option value="Concluída">Concluída</option>
+            </select>
+        </div>
+        
+        <!-- Novo campo: Prioridade (select) -->
+        <div class="campo-container">
+            <label for="prioridade">Prioridade*</label>
+            <select id="prioridade" class="campo-prioridade" required>
+                <option value="">Selecione uma prioridade...</option>
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+            </select>
+        </div>
+        
+        <!-- Novo campo: Data de Entrega (input date) -->
+        <div class="campo-container">
+            <label for="data_entrega">Data de Entrega</label>
+            <input id="data_entrega" class="campo-data-entrega" type="date">
+            <!-- Input do tipo date para selecionar data -->
+        </div>
+        
+        <!-- Botão de submit (já existente, mas atualizado) -->
+        <button class="botao-adicionar" type="submit">
+            <i class="fas fa-plus"></i> Adicionar Tarefa <!-- Adicionado ícone -->
+        </button>
+    </form>
+ 
+    <!-- Lista de tarefas (alterada de ul para div para melhor estruturação) -->
+    <div class="lista-tarefas" id="listaTarefas">
+        <!-- As tarefas serão inseridas aqui via JavaScript -->
+        <!-- Cada tarefa terá uma estrutura completa com todos os campos -->
+    </div>
+
+    <!-- Scripts (mantidos conforme original) -->
+    <script src="js/script-integracaoAPI.js"></script> <!-- Arquivo principal JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery (se estiver usando) -->
+</body>
+</html>
